@@ -370,6 +370,7 @@
     .game-container { padding: 3px; border-radius: 10px; }
     .bike-game-area { height: 220px; }
     .ending-message { font-size: 1.2em; }
+     h1 { font-size: 1.5em; margin-bottom: 10px; } /* この行を追加 */
     .obstacle-group { height: 180px; top: 30px; } /* 追加 */
     .obstacle.top { height: 45px; }
     .obstacle.middle { height: 30px; top: 70px; }
@@ -379,6 +380,7 @@
 </head>
 <body>
     <div class="game-container">
+<h1>🚴‍♂️ 自転車に乗る男</h1>
         <!-- ミニゲーム部分 -->
         <div class="mini-game" id="miniGame">
             <div class="bike-game-area" id="gameArea">
