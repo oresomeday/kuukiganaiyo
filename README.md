@@ -331,7 +331,7 @@
             font-size: 2em;
             font-weight: bold;
             text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
-            animation: bounce 2s infinite;
+          
             margin-bottom: 20px;
             text-align: center;
             line-height: 1.4;
