@@ -350,25 +350,31 @@
         }
         
         /* スマホ対応 */
-        @media (max-width: 768px) {
-            .game-container { padding: 5px; }
-            .bike-game-area { height: 250px; margin: 5px 0; }
-            .bike { font-size: 1.8em; bottom: 45px; right: 25px; }
-            .touch-button { width: 50px; height: 50px; font-size: 1.5em; }
-            .ending-message { font-size: 1.5em; padding: 15px; }
-            .reel-container { width: 70px; height: 70px; }
-            .reel { font-size: 0.9em; }
-            .obstacle.top, .obstacle.bottom { height: 60px; }
-            .obstacle.middle { height: 40px; top: 85px; }
-            .gap-indicator { height: 40px; }
-        }
-        
-        @media (max-width: 480px) {
-            body { padding: 2px; }
-            .game-container { padding: 3px; border-radius: 10px; }
-            .bike-game-area { height: 220px; }
-            .ending-message { font-size: 1.2em; }
-        }
+       @media (max-width: 768px) {
+    .game-container { padding: 5px; }
+    .bike-game-area { height: 250px; margin: 5px 0; }
+    .bike { font-size: 1.8em; bottom: 45px; right: 25px; }
+    .touch-button { width: 50px; height: 50px; font-size: 1.5em; }
+    .ending-message { font-size: 1.5em; padding: 15px; }
+    .reel-container { width: 70px; height: 70px; }
+    .reel { font-size: 0.9em; }
+    .obstacle-group { height: 210px; top: 30px; } /* 追加 */
+    .obstacle.top { height: 50px; }
+    .obstacle.middle { height: 35px; top: 75px; }
+    .obstacle.bottom { height: 50px; bottom: 0; } /* bottomを明示 */
+    .gap-indicator { height: 35px; }
+}
+
+@media (max-width: 480px) {
+    body { padding: 2px; }
+    .game-container { padding: 3px; border-radius: 10px; }
+    .bike-game-area { height: 220px; }
+    .ending-message { font-size: 1.2em; }
+    .obstacle-group { height: 180px; top: 30px; } /* 追加 */
+    .obstacle.top { height: 45px; }
+    .obstacle.middle { height: 30px; top: 70px; }
+    .obstacle.bottom { height: 45px; bottom: 0; } /* bottomを明示 */
+}
     </style>
 </head>
 <body>
@@ -879,11 +885,13 @@ A木山の写真には、なぜか背景にポールが写っていた。
             }
         }
         
-        function updateBikePosition() {
-            const bike = document.getElementById('bike');
-            const positions = [70, 125, 180];
-            bike.style.top = positions[bikePosition] + 'px';
-        }
+       function updateBikePosition() {
+    const bike = document.getElementById('bike');
+    // スマホでの位置調整
+    const isMobile = window.innerWidth <= 768;
+    const positions = isMobile ? [60, 105, 150] : [70, 125, 180];
+    bike.style.top = positions[bikePosition] + 'px';
+}
         
         function createObstacleGroup() {
             const gameArea = document.getElementById('gameArea');
