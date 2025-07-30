@@ -328,20 +328,32 @@
         }
         
         .ending-message {
-            font-size: 2em;
-            font-weight: bold;
-            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
-          
-            margin-bottom: 20px;
-            text-align: center;
-            line-height: 1.4;
-            max-width: 90%;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-            white-space: pre-line; /* この行を追加 */
-        }
+             font-size: 2em;
+    font-weight: bold;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+    text-align: center;
+    line-height: 1.4;
+    max-width: 90%;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    white-space: pre-line;
+    /* 自動スクロール用 */
+    animation: scrollUp 20s linear infinite;
+    transform: translateY(50vh);
+}
+
+/* 自動スクロールアニメーション */
+@keyframes scrollUp {
+    0% {
+        transform: translateY(50vh);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}
         
         @keyframes bounce {
             0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
@@ -355,7 +367,11 @@
     .bike-game-area { height: 250px; margin: 5px 0; }
     .bike { font-size: 1.8em; bottom: 45px; right: 25px; }
     .touch-button { width: 50px; height: 50px; font-size: 1.5em; }
-    .ending-message { font-size: 1.5em; padding: 15px; }
+.ending-message { 
+    font-size: 1.5em; 
+    padding: 15px;
+    animation: scrollUp 25s linear infinite;
+} 
     .reel-container { width: 70px; height: 70px; }
     .reel { font-size: 0.9em; }
     .obstacle-group { height: 210px; top: 30px; } /* 追加 */
@@ -369,7 +385,10 @@
     body { padding: 2px; }
     .game-container { padding: 3px; border-radius: 10px; }
     .bike-game-area { height: 220px; }
-    .ending-message { font-size: 1.2em; }
+   .ending-message { 
+    font-size: 1.2em;
+    animation: scrollUp 30s linear infinite;
+}
      h1 { font-size: 1.5em; margin-bottom: 10px; } /* この行を追加 */
     .obstacle-group { height: 180px; top: 30px; } /* 追加 */
     .obstacle.top { height: 45px; }
