@@ -439,7 +439,7 @@
         let obstacleSpawnTimer = 0;
         
         // スロットゲーム関連の変数
-                const reel1Words = ['空気','愛', '髪'];
+                const reel1Words = ['空気'];
         const reel2Words = ['が', 'は'];
         const reel3Words = ['ある', 'ない'];
         let isSpinning = false;
