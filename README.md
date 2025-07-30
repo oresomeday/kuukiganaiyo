@@ -340,6 +340,7 @@
             padding: 20px;
             border-radius: 15px;
             backdrop-filter: blur(10px);
+            white-space: pre-line; /* この行を追加 */
         }
         
         @keyframes bounce {
